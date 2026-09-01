@@ -18,8 +18,8 @@ set ignorecase
 packadd! matchit
 
 " 行列高亮
-"set cuc
-"set cul
+set cuc
+set cul
 
 "hi CursorColumn guibg=LightGrey
 "hi CursorLine ctermbg=NONE guibg=NONE
@@ -34,7 +34,7 @@ augroup END
 
 " 设置行号
 set nu
-set relativenumber 
+"set relativenumber 
 
 " 自定义映射前缀
 let mapleader = ","
@@ -47,7 +47,7 @@ set enc=utf-8
 let &termencoding=&encoding
 
 " 设置字体
-set guifont=Monospace\ 10
+set guifont=Monospace\ 9
 
 " 设置tab4个空格
 set tabstop=4
@@ -89,7 +89,7 @@ set guioptions-=T
 " gvim大小和位置 
 if has("gui_running")
     winpos 235 235
-	set lines=40 columns=108
+	set lines=40 columns=158
 endif
 
 
@@ -140,47 +140,4 @@ set clipboard+=unnamedplus
 
 " 双击ii
 imap ii <ESC>
-
-
-
-"重开文件跳转原来光标位置或末尾
-au BufReadPost * 
-	\	if line("'\"") > 0 && line("'\"") <= line("$")|
-	\		exe "norm '\"" | 
-	\	else|
-	\		exe "norm $" |
-	\	endif|
-
-if has("nvim")
-    echo "nvim"
-    source ~/vim/syntax/vim_plug_start.vim
-    source ~/vim/syntax/NERDTree_cfg.vim
-    source ~/vim/syntax/file_header.vim
-    source ~/vim/syntax/ale_cfg.vim
-    source ~/vim/syntax/ctags_cfg.vim 
-    source ~/vim/syntax/autocmd_cfg.vim 
-    source ~/vim/syntax/key_map_cfg.vim 
-    source ~/vim/syntax/git_signify.vim
-    source ~/vim/syntax/myscolors.vim
-    "source ~/vim/syntax/sc_highlight.vim
-    "source ~/vim/syntax/systemverilog.vim
-    source ~/vim/syntax/supercolors.vim
-
-elseif has("gui_running")
-    source ~/vim/syntax/vim_plug_start.vim
-    source ~/vim/syntax/NERDTree_cfg.vim
-    source ~/vim/syntax/file_header.vim
-    source ~/vim/syntax/ale_cfg.vim
-    source ~/vim/syntax/ctags_cfg.vim 
-    source ~/vim/syntax/autocmd_cfg.vim 
-    source ~/vim/syntax/key_map_cfg.vim 
-    source ~/vim/syntax/git_signify.vim
-    source ~/vim/syntax/myscolors.vim 
-    "source ~/vim/syntax/sc_highlight.vim
-    "source ~/vim/syntax/systemverilog.vim
-    source ~/vim/syntax/supercolors.vim
-else 
-    echo "Running in vim"
-endif 
-
 

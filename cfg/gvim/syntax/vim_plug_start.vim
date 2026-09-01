@@ -8,8 +8,9 @@
 ""插件管理的插件
 """""""""""""""""""""""""""""""""""""""""""""""
 "加载插件管理插件 
-source  ~/vim/autoload/vim-plug/plug.vim  
-call plug#begin('~/.vim/bundle')
+source  $MY_CFG_GVIM_PATH/bundle/minibufexpl.vim/plugin/minibufexpl.vim
+source  $MY_CFG_GVIM_PATH/autoload/vim-plug/plug.vim  
+call plug#begin('$MY_CFG_GVIM_PATH/bundle')
     Plug 'preservim/nerdtree'
     Plug 'scrooloose/nerdcommenter'
     Plug 'mhinz/vim-startify'
@@ -17,14 +18,14 @@ call plug#begin('~/.vim/bundle')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'yggdroot/indentline'
     Plug 'w0ng/vim-hybrid'
-    "Plug 'w0rp/ale'
+    Plug 'w0rp/ale'
     Plug 'universal-ctags/ctags'
-    "Plug 'SirVer/ultisnips'
+    Plug 'SirVer/ultisnips'
     Plug 'keelii/vim-snippets'
     Plug 'Shougo/neocomplcache.vim'
     Plug 'junegunn/vim-easy-align'
-	Plug 'vim-scripts/vlog_inst_gen'
-	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+	"Plug 'vim-scripts/vlog_inst_gen'
+	"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     "Plug 'ryanoasis/vim-devicons'
     Plug 'mhinz/vim-signify'
     Plug 'vhda/verilog_systemverilog.vim'
@@ -34,10 +35,10 @@ call plug#begin('~/.vim/bundle')
     Plug 'gregsexton/gitv', 
     Plug 'tpope/vim-fugitive'
     Plug 'simnalamburt/vim-mundo'
-    Plug 'Ludovicchabant/vim-gutentags'
+    " Plug 'Ludovicchabant/vim-gutentags'
     Plug 'Chiel92/vim-autoformat'
     Plug 'bagrat/vim-buffet'
-
+    Plug 'fholgado/minibufexpl'
 call plug#end()
 
 
@@ -78,7 +79,7 @@ let g:neocomplcache_enable_auto_select = 1
 ""verilog_inst_gen settings
 "例化插件 指令是",ig"
 """"""""""""""""""""""""""""""""""""""""""""""""
-"so ~/vim/bundle/vlog_inst_gen/vlog_inst_gen.vim 
+"so $MY_CFG_GVIM_PATH/bundle/vlog_inst_gen/vlog_inst_gen.vim 
 let g:vlog_inst_gen_mode=2 "copy to clipboard and echo inst in split window
 
 
@@ -110,10 +111,10 @@ filetype plugin indent on
 let g:atv_snippet_project = 'riscv'
 "let g:atv_snippet_company = "XIN"
 let g:atv_snippet_device = ""
-let g:atv_snippet_author = "x00897025"
+let g:atv_snippet_author = "xugx00"
 let g:atv_snippet_email = ""
 let g:atv_snippet_website = ""
-"let g:atv_snippet_albpp_file = '~/.vim/template.v'
+"let g:atv_snippet_albpp_file = '$MY_CFG_GVIM_PATH/template.v'
 " 设置 Git 命令的默认行为
 let g:fugitive_git_executable = 'git'
 set statusline+=%{FugitiveStatusline()}
@@ -121,7 +122,7 @@ set statusline+=%{FugitiveStatusline()}
 let g:fugitive_output_format = 'buffer'
 " Enable persistent undo so that undo history persists across vim sessions
 set undofile
-set undodir=~/.vim/undodir
+set undodir=$MY_CFG_GVIM_PATH/undodir
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -135,7 +136,7 @@ let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
 let g:gutentags_ctags_tagfile = '.tags'
 
 " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 "
-let s:vim_tags = expand('~/.cache/tags')
+let s:vim_tags = expand('$MY_CFG_GVIM_PATH/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
 " 检测 ~/.cache/tags 不存在就新建 "
 if !isdirectory(s:vim_tags)

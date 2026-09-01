@@ -1,4 +1,5 @@
 augroup NERDTree
+
     au!
     autocmd VimEnter * 
 				\	NERDTree   " vim启动时自动打开NERDTree 
