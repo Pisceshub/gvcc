@@ -19,10 +19,9 @@ a   mlist   "module list"
 
 
 # 编辑器 / 文件
-a   gv      "gvim"
 a   g       "gvim -p"
-a   gg      "g ~/vim/syntax/vim_usr_cfg.vim"
-a   gc      "g ~/vim/.bashrc"
+a   gv      "g $MY_CFG_GVIM_PATH/.vimrc"
+a   gc      "g $MY_CFG_SHELL_PATH/.cshrc"
 a   md      "mkdir"
 
 
@@ -31,12 +30,13 @@ a   ...     "cd ../../;la"
 a   ....    "cd ../../../;la"
 a   .....   "cd ../../../../;la"
 a   ......  "cd ../../../../../;la"
-a   cdv     "cd ~/.vim"
-a   cc      "cd ../;la"
-a   ccc     "cd ../../;la"
-a   cccc    "cd ../../../;la"
-a   ccccc   "cd ../../../../;la"
-a   cccccc  "cd ../../../../../;la"
+
+a   c       "cd ../;la"
+a   cc      "cd ../../;la"
+a   ccc     "cd ../../../;la"
+a   cccc    "cd ../../../../;la"
+a   ccccc   "cd ../../../../../;la"
+a   cccccc  "cd ../../../../../../;la"
 
 
 # git
